@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components'
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
@@ -10,8 +10,6 @@ import { Link } from 'react-router-dom'
 import api from '../services/api'
 import { useHistory } from "react-router-dom";
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { space } from 'styled-system'
-// import { useForm } from "react-hook-form";
 
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -29,8 +27,6 @@ const useStyles = makeStyles((theme) =>
 );
 
 function Cadastrar() {
-    const classes = useStyles();
-
     const [name, setName] = useState()
     const [cnpj, setCnpj] = useState()
     const [password, setPassword] = useState()
@@ -42,19 +38,11 @@ function Cadastrar() {
     const [addressState, setAddressState] = useState()
     const [addressCountry, setAddressCountry] = useState()
     const [addressCode, setAddressCode] = useState()
-
     const history = useHistory();
-
     const [open, setOpen] = useState(false);
     const [openS, setOpenS] = useState(false);
     const [error, setError] = useState('');
     const [messageError, setMessageError] = useState('');
-
-    const onSubmit = (data) => console.log(data);
-
-    var checkImput = (value) => {
-        if (value !== undefined && value !== '') return true
-    }
 
     var handleClose = () => {
         if (error !== '' || error !== undefined) {
@@ -94,7 +82,6 @@ function Cadastrar() {
         }
 
         api.post('/business', mock).then(response => {
-
             if (response.status === 200 && response.message !== '') {
                 console.log(response)
                 setOpenS(true);
@@ -105,19 +92,8 @@ function Cadastrar() {
         })
     }
 
-
-    const DFom = styled.section`
-        padding: 0.5em;
-    `;
     const DivImg = styled.section`
         padding-top: 3.5em;
-    `;
-    // const Wrapper = styled.section`
-    //     padding: 4em;
-    // `;
-    const DivBtn = styled.section`
-        padding-top: 1em;
-        display: flex;
     `;
 
     var handleChangeName = (event) => {
@@ -206,21 +182,16 @@ function Cadastrar() {
                                         <div className="iForm"><TextField id="addressState" label="Estado" onChange={handleChangeAddressState} /></div>
                                         <div className="iForm"><TextField id="addressCountry" label="País" onChange={handleChangeAddressCountry} /></div>
                                         <div className="iForm"><TextField id="password" type="password" label="Senha" onChange={handleChangePassword} /></div>
-                                        {/* <div className="iForm"><TextField id="confirm" label="Confirmar a senha" onChange={handleChangePassword}/></div> */}
                                     </div>
                                 </div>
                             </form>
                             <div className="divbutton">
                                 <Button><Link to="" className="">Voltar</Link></Button>
                                 <button className="button-cadastro" onClick={handleSubmit}>Enviar Dados</button>
-
-
-
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
             <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
                 <Alert onClose={handleClose} severity="error">

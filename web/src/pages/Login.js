@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components'
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-import TextField from '@material-ui/core/TextField';
 import '../styles/pages/login.css';
 import login01 from '../assets/images/login01.svg'
 import logo from '../assets/logo/logopng.png'
@@ -46,7 +45,6 @@ const Login = () => {
     const DivImg = styled.section`
     padding-top: 3.5em;
 `;
-
     var handleSubmit = () => {
 
         api.post('/business/login', logon).then(response => {
@@ -54,13 +52,6 @@ const Login = () => {
             if (response.status === 200 && response.data.token !== '' &&
                 response.data.token !== undefined && response) {
                 localStorage.setItem('@token', response?.data?.token)
-
-                // remove token local 
-                // localStorage.removeItem('@token')
-
-                // capturatoken
-                // const token = localStorage.getItem('@token');
-
                 history.push('home');
             } else {
                 setOpen(true);
@@ -82,15 +73,12 @@ const Login = () => {
                 <div className="content">
                     <div class="wrapper">
                         <img src={logo} alt="img" width="55%" /> 
-                            {/* <img src={logo} alt="img" width="55%" /> */}
                             <form>
                                 <label>Login:</label>
                                 <input type="text" id="login" onChange={handleChangeLogin} />
                                 <label>Senha:</label>
                                 <input type="password" id="senha" onChange={handleChangePassword}></input>
                             </form>
-                            
-                            
                             <button className="button-password" onClick={handleSubmit} disabled={disabledButton}>Logar</button>
                             <button className="button-cadastro" onClick={handleSubmit} >
                                 <Link to="/cadastrar" >
@@ -101,7 +89,6 @@ const Login = () => {
                                         Recuperar a senha</Link>
                                 </p>
                             </div>
-                        
                     </div>
                 </div>
 
