@@ -64,35 +64,38 @@ const Login = () => {
         <div id="login-page">
             <div>
 
-            <div className="container">
-                <div className="content">
-                    <DivImg>
-                        <img src={login01} alt="img" width="80%" />
-                    </DivImg>
-                </div>
-                <div className="content">
-                    <div class="wrapper">
-                        <img src={logo} alt="img" width="55%" /> 
+                <div className="container">
+                    <div className="content">
+                        <DivImg>
+                            <img src={login01} alt="img" width="70%" />
+                        </DivImg>
+                    </div>
+                    <div className="content">
+                        <div class="wrapper">
+                            <img src={logo} alt="img" width="25%" />
                             <form>
                                 <label>Login:</label>
                                 <input type="text" id="login" onChange={handleChangeLogin} />
                                 <label>Senha:</label>
                                 <input type="password" id="senha" onChange={handleChangePassword}></input>
                             </form>
-                            <button className="button-password" onClick={handleSubmit} disabled={disabledButton}>Logar</button>
-                            <button className="button-cadastro" onClick={handleSubmit} >
-                                <Link to="/cadastrar" >
-                                    Cadastrar</Link></button>
+                            <div className="buttons">
+
+                                <button className="button-password" onClick={handleSubmit} disabled={disabledButton}>Logar</button>
+                                <button className="button-cadastro" onClick={handleSubmit} >
+                                    <Link to="/cadastrar" >
+                                        Cadastrar</Link></button>
+                            </div>
                             <div >
                                 <p>Esqueceu seu login? < p />
                                     <Link to="/help" className="recovery-password">
                                         Recuperar a senha</Link>
                                 </p>
                             </div>
+                        </div>
                     </div>
-                </div>
 
-            </div>
+                </div>
             </div>
             <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
                 <Alert onClose={handleClose} severity="error">

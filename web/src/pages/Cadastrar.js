@@ -30,6 +30,8 @@ function Cadastrar() {
     const [name, setName] = useState()
     const [cnpj, setCnpj] = useState()
     const [password, setPassword] = useState()
+    const [latitude, setLatitude] = useState()
+    const [longitude, setLongitude] = useState()
     const [description, setDescription] = useState()
     const [addressStreet, setAddressStreet] = useState()
     const [addressNumber, setAddressNumber] = useState()
@@ -54,6 +56,8 @@ function Cadastrar() {
         setOpenS(false);
         setCnpj("")
         setPassword("")
+        setLongitude("")
+        setLatitude("")
         setDescription("")
         setAddressStreet("")
         setAddressNumber("")
@@ -77,7 +81,9 @@ function Cadastrar() {
             "addressCity": addressCity,
             "addressState": addressState,
             "addressCountry": addressCountry,
-            "addressCode": addressCode
+            "addressCode": addressCode,
+            "addressLatitude": latitude,
+            "addressLongitude": longitude,
 
         }
 
@@ -106,6 +112,12 @@ function Cadastrar() {
 
     var handleChangePassword = (event) => {
         setPassword(event.target.value)
+    }
+    var handleChangeLatitude = (event) => {
+        setLatitude(event.target.value)
+    }
+    var handleChangeLongitude = (event) => {
+        setLongitude(event.target.value)
     }
 
     var handleChangeDescription = (event) => {
@@ -182,6 +194,8 @@ function Cadastrar() {
                                         <div className="iForm"><TextField id="addressState" label="Estado" onChange={handleChangeAddressState} /></div>
                                         <div className="iForm"><TextField id="addressCountry" label="País" onChange={handleChangeAddressCountry} /></div>
                                         <div className="iForm"><TextField id="password" type="password" label="Senha" onChange={handleChangePassword} /></div>
+                                        <div className="iForm"><TextField id="latitude" label="latitude" onChange={handleChangeLatitude} /></div>
+                                        <div className="iForm"><TextField id="longitude" label="longitude" onChange={handleChangeLongitude} /></div>
                                     </div>
                                 </div>
                             </form>

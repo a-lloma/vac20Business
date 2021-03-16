@@ -5,6 +5,11 @@
     display: flex;
 }
 
+#login-page .buttons {
+    display: flex;
+    flex-direction: column;
+}
+
 
 /* #login-page .divPequenas {
     display: flex;
@@ -147,3 +152,19 @@
     font-weight: 800;
     line-height: 70px;
 } */
+
+#helper-page {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(329.54deg, #29B6D1 0%, #00C7C7 100%);
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#helper-page .content-wrapper {
+    display: absolute;
+    align-content: center;
+    align-items: center;
+}

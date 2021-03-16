@@ -5,7 +5,7 @@ import '../styles/pages/login.css';
 
 function TalkToUsHelper() {
     return (
-        <div id="login-page">
+        <div id="helper-page">
             <div className="content-wrapper">
 
             <h1>Precisa de Ajuda?</h1>
