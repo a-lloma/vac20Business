@@ -58,7 +58,7 @@ function ValidaCliente() {
     const [error, setError] = useState('');
     const [messageError, setMessageError] = useState('');
     const [statusVisit, setStatusVisit] = useState()
-    const [hideNextStep, setHideNextStep] = useState(true)
+    const [hideNextStep, setHideNextStep] = useState(false)
     const [firstMessage, setFirstMessage] = useState(false)
 
     const handleCpf = (event) => {
@@ -87,12 +87,16 @@ function ValidaCliente() {
 
             console.log('api', response.data)
             setStatusCliente(response.data.message)
-            setHideNextStep(response.response)
+           
+            setHideNextStep(response)
+            // setHideNextStep(true)
+
         }).catch((error) => {
             console.log(error)
             if (error.statusCode !== "200") {
                 setMessageError(`Não foi possível validar o usuário`)
                 setOpen(true)
+                setHideNextStep(false)
             }
         })
     }
@@ -255,7 +259,7 @@ function ValidaCliente() {
             </h3>
                                 <p> Informe o CPF do cliente</p>
                                 <p>
-                                    <input type="number" placeholder="cpf" onChange={handleCpf} value={cpf}/>
+                                    <input placeholder="cpf" onChange={handleCpf} value={cpf}/>
                                     <button onClick={verifyCPF} className="button-cliente"> Validar Cliente</button>
                                     <button onClick={clean} className="button-limpa"> Limpar</button>
                                 </p>
