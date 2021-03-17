@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom'
 import api from '../services/api'
 import { useHistory } from "react-router-dom";
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { cpfMask } from '../utils/mask'
 
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -107,7 +108,7 @@ function Cadastrar() {
     }
 
     var handleChangeCnpj = (event) => {
-        setCnpj(event.target.value)
+        setCnpj(cpfMask(event.target.value))
     }
 
     var handleChangePassword = (event) => {
@@ -162,6 +163,8 @@ function Cadastrar() {
         align-items: center;
     `;
 
+    
+
     return (
         <div id="cadastrar-page">
             <div >
@@ -193,9 +196,9 @@ function Cadastrar() {
                                         <div className="iForm"><TextField id="addressCity" label="Cidade" onChange={handleChangeAddressCity} /></div>
                                         <div className="iForm"><TextField id="addressState" label="Estado" onChange={handleChangeAddressState} /></div>
                                         <div className="iForm"><TextField id="addressCountry" label="País" onChange={handleChangeAddressCountry} /></div>
-                                        <div className="iForm"><TextField id="password" type="password" label="Senha" onChange={handleChangePassword} /></div>
-                                        <div className="iForm"><TextField id="latitude" label="latitude" onChange={handleChangeLatitude} /></div>
-                                        <div className="iForm"><TextField id="longitude" label="longitude" onChange={handleChangeLongitude} /></div>
+                                        <div className="iForm"><TextField id="password" type="Password" label="Senha" onChange={handleChangePassword} /></div>
+                                        <div className="iForm"><TextField id="latitude" label="Latitude" onChange={handleChangeLatitude} /></div>
+                                        <div className="iForm"><TextField id="longitude" label="Longitude" onChange={handleChangeLongitude} /></div>
                                     </div>
                                 </div>
                             </form>

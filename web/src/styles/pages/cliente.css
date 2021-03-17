@@ -1,0 +1,121 @@
+#cliente .flex-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: initial;
+    flex-grow: 1;
+}
+
+.btn_icon {
+    margin: 6px;
+    width: 64px;
+    height: 64px;
+    background: #15c3d6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: background-color 0.2s;
+}
+
+.btn_icon {
+    color: rgb(202, 249, 255);
+}
+
+.btn_icon:hover {
+    color: rgb(250, 29, 121);
+}
+
+#visitas {
+    background: cornflowerblue;
+    padding: 40px;
+    border-radius: 8px;
+    width: 500px;
+}
+
+#verifica {
+    border-style: solid;
+    background-color: rgb(100, 149, 237, 0.3);
+    border-color: rgb(100, 149, 237);
+    border-radius: 8px;
+    width: 600px;
+    padding: 10px;
+    height: 170px;
+    margin-top: 10px;
+}
+
+#registra {
+    border-style: solid;
+    background-color: rgb(100, 149, 237, 0.3);
+    border-color: rgb(100, 149, 237);
+    border-radius: 8px;
+    width: 600px;
+    padding: 10px;
+    height: 170px;
+    margin-top: 10px;
+}
+
+.button-cliente {
+    background-color: #1e12c0;
+    border-radius: 20px;
+    height: 40px;
+    width: 260px;
+    border: none;
+    margin: 6px;
+    color: white;
+}
+
+.button-cliente:hover {
+    background-color: #ff96f6;
+    color: black;
+}
+
+.button-cliente:focus {
+    background-color: #ff96d7;
+    color: black;
+}
+
+.button-limpa {
+    background-color: #FF669D;
+    border-radius: 20px;
+    height: 40px;
+    width: 80px;
+    border: none;
+    margin: 6px;
+    color: white;
+}
+
+.button-limpa:hover {
+    background-color: #ff96f6;
+    color: black;
+}
+
+.button-limpa:focus {
+    background-color: #ff96d7;
+    color: black;
+}
+
+.header {
+    background: linear-gradient(329.54deg, #1897b1 0%, #00C7C7 100%);
+}
+
+.pagina {
+    color: white;
+}
+
+#cliente .titulopagina {
+    color: #00C7C7;
+    margin: 40px;
+}
+
+.contentVisitas {
+    padding-bottom: 20px;
+    color: rgb(202, 249, 255);
+}
+
+.contentValida {
+    background: seashell;
+}
+
+p {
+    font-size: 14px;
+}

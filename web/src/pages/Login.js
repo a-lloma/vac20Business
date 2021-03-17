@@ -20,12 +20,14 @@ const Login = () => {
     const [open, setOpen] = useState(false);
     const [error, setError] = useState('');
     const [messageError, setMessageError] = useState('');
+    const [cnpj, setCnpj] = useState()
 
     var checkImput = (value) => {
         if (value !== undefined && value !== '') return true
     }
 
     var handleChangeLogin = (event) => {
+        setCnpj(event.target.value)
         setLogon({ username: event.target.value, password: logon.password });
         if (checkImput(logon.password) && checkImput(logon.password)) { setDisabledButton(false) }
     }
@@ -52,6 +54,7 @@ const Login = () => {
             if (response.status === 200 && response.data.token !== '' &&
                 response.data.token !== undefined && response) {
                 localStorage.setItem('@token', response?.data?.token)
+                localStorage.setItem('@cnpj', cnpj)
                 history.push('home');
             } else {
                 setOpen(true);
@@ -74,7 +77,7 @@ const Login = () => {
                         <div class="wrapper">
                             <img src={logo} alt="img" width="25%" />
                             <form>
-                                <label>Login:</label>
+                                <label>CNPJ:</label>
                                 <input type="text" id="login" onChange={handleChangeLogin} />
                                 <label>Senha:</label>
                                 <input type="password" id="senha" onChange={handleChangePassword}></input>
