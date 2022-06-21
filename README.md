@@ -7,7 +7,11 @@ Projeto de modernização para o controle de vacinas
 
 ![MacBook Pro - 1](https://user-images.githubusercontent.com/35180706/174691555-ae73b984-d631-4b8f-ab84-7583df920dd2.png)
 
-## projeto mobile aqui: https://github.com/Lloma93/eVacMobile/edit/master/README.md 
+## projeto mobile aqui:
+ https://github.com/Lloma93/eVacMobile/edit/master/README.md 
+
+## confira a documentação completa:
+ https://www.behance.net/gallery/146464419/eVac-2020 
 
 :) 
 Obrigada pela atenção 
